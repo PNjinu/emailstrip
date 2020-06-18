@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Email Strip{% endblock %}
+{% block content %}
+    <div class="row mt-4">
+        <div class="col-6 offset-3">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="string">Insert your string here:</label>
+                    <textarea class="form-control" id="string" rows="3" name="string"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-6 offset-3 text-center">
+            {% if content %}
+            <h5>Email addresses in your string</h5>
+            {% endif %}
+            {% for email in content %}
+                <p>{{ email }}</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
